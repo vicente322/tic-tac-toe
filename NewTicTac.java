@@ -9,7 +9,7 @@ class TicTacToe{
 
       public static String display(String[][] b) {
             String r = "";
-            System.out.println("  0 1 2");
+            r += "    0   1   2 \n";
             for (int i = 0; i < b.length; i++) {
                   r += i + "|"; //numeraçãoi lateral mais primeira barra da linha
                   for (int j = 0; j < b[i].length; j++) {
@@ -24,7 +24,12 @@ class TicTacToe{
 
             Scanner sc;
 
-            System.out.printf("    0   1   2 \n0     |   |   \n   ---|---|---\n1     |   |   \n   ---|---|---\n2     |   |   \n");
+            System.out.printf("    0   1   2 \n");
+            System.out.printf("0     |   |   \n");
+            System.out.printf("   ---|---|---\n");
+            System.out.printf("1     |   |   \n");
+            System.out.printf("   ---|---|---\n");
+            System.out.printf("2     |   |   \n");
 
       }
 }

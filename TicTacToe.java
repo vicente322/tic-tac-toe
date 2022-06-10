@@ -19,7 +19,6 @@ class TicTacToe {
             }
             return b;
       }
-
       public static String display(String[][] b) {
             assert b != null;
             String r = "";
@@ -40,38 +39,63 @@ class TicTacToe {
             }
             return r;
       }
-
       public static void set(String[][] b, int i, int j, String p) {
             if (b[i][j].equals(" ")) {
                   b[i][j] = p;
             }
       }
-
-        public static void main(String[] args) {
-          Scanner sc;
-          String[][] board;
-          String player = "x";
-          int i, j;
-
-          System.out.println("Jogo da Velha!");
-          board = init();
-          sc = new Scanner(System.in);
-          while (true) {
-            System.out.println(display(board));
-            i = sc.nextInt();
-            if (i < 0)
-              break;
-            j = sc.nextInt();
-
-            set(board, i, j, player); //Escolhe e muda valor da posição
-            if (player.equals("x")) {
-              player = "o";
-            } else {
-              player = "x";
+      public static boolean checkEnd(String[][] b){
+            for(int i = 0; i <= 2; i++){
+                  for(int j = 0; j <= 2; j++){
+                        if (b[i][j].equals(" ")){
+                              return false;
+                        }
+                  }
             }
 
-          }
-          sc.close();
+            return true;
+      }
 
-        }
+      public static void main(String[] args) {
+            Scanner sc;
+            String[][] board;
+            String player = "x";
+            int i, j;
+
+            System.out.println("Jogo da Velha!");
+
+            board = init();
+
+            sc = new Scanner(System.in);
+
+            while (true) {
+
+                  System.out.println(display(board));
+
+                  if (checkEnd(board)){
+                        System.out.printf("FIM DE JOGO!\n");
+                        break;
+                  }
+
+                  i = sc.nextInt();
+
+                  if (i < 0){
+                        break;
+                  }
+                  
+                  j = sc.nextInt();
+
+                  set(board, i, j, player); //Escolhe e muda valor da posição
+
+                  if (player.equals("x")) {
+                        player = "o";
+                  }
+                  else {
+                        player = "x";
+                  }
+
+            }
+      sc.close();
+
+      }
 }

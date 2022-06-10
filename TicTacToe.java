@@ -21,14 +21,22 @@ class TicTacToe {
       }
 
       public static String display(String[][] b) {
+            assert b != null;
             String r = "";
-            System.out.println("  0 1 2");
+            r += "    0   1   2 \n";
             for (int i = 0; i < b.length; i++) {
-                  r += i + "|"; //numeraçãoi lateral mais primeira barra da linha
+                  r += i + "   "; //numeraçãoi lateral mais primeiros espaços
                   for (int j = 0; j < b[i].length; j++) {
                         r += b[i][j]; //imprime o valor de cada coluna na linha
+
+                        if(j < 2){
+                              r += " | ";
+                        }
                   }
-                  r += "|\n"; //ultima barra da linha + nova linha
+                  r += " \n";; //nova linha
+                  if (i < 2){
+                        r += "   ---|---|---\n";
+                  }
             }
             return r;
       }

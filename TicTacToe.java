@@ -55,6 +55,9 @@ class TicTacToe {
 
             return true;
       }
+      public static boolean checkVictory(String[][] b){
+            
+      }
 
       public static void main(String[] args) {
             Scanner sc;
@@ -82,7 +85,7 @@ class TicTacToe {
                   if (i < 0){
                         break;
                   }
-                  
+
                   j = sc.nextInt();
 
                   set(board, i, j, player); //Escolhe e muda valor da posição
